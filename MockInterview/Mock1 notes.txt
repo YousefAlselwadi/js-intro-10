@@ -1,0 +1,153 @@
+What is JavaScript, and what are its key features?
+-JavaScript is a high-level, interpreted programming language primarily used for web 
+development. 
+-Its key features include being lightweight, easy to learn, and designed to add interactivity to web 
+pages.
+
+How is JavaScript different from other programming languages?
+- JavaScript has a unique features like loose typing system, dynamic runtime and closures.
+
+Where is JavaScript commonly used in web development?
+- it's commoly used from validation 
+
+What is ECMAScript? 
+-ECMAScript (ES6)
+
+Is JavaScript a compiled or interpreted language? 
+-JavaScript in a interpreted language does not require a separate compilation step
+-JavaScript code is executed line by line. 
+
+Is there any relation between Java and JavaScript? 
+-They have similar names but java and JavaScript are two entirely different programming languages
+-Java is statically typed and JavaScript is dynamically typed
+
+What are the differences between var, let, and const?
+- var-let-const keywords are used for variables
+-var is a keyword that was used from 1995 to 2015 The var keyword was traditionally used to declare variables, but let and const were introduced 
+in newer versions of JavaScript (ES6)
+- let allows us to change the value of the variables at any point in the program
+- const stands for constant, const variables have final values which cannot be changed
+
+List and briefly describe the basic data types in JavaScript.
+-There are 7 primitives: String, Number, Bigint, Boolean, Undefined, Null, Symbol
+-There are also Reference-Object data types: arrays, objects
+1. String: Strings are used for storing and text. You can use single quotes, double quotes, or backticks.
+2. Number: A numric data type that represents whole numbers or decimal numbers.
+3. BigInt: It can store very large numbers that are too big to be represtened by a normal JavaScript number.
+4. Boolean: it can have only two values: true or false. it often used with conditional statments.
+5. undefined: a variable without a vlue, has the value undifined.
+6. Null: a value that represtents the intentional absense of any object value.
+7. symbol: a unique value used as an indentifier for object properties.
+
+
+How can you check the type of a variable in JavaScript?
+-You can use the typeof operator.
+
+What are the differences between == and ===? 
+- == loose equality 
+- === strict equality
+
+How do you convert a string to a number in JavaScript?
+- Use the parseInt() or parseFloat()
+
+What are the differences between integers and floating-point numbers in 
+JavaScript?
+-integers are whole numbers without fractional parts 
+-Floating-Point number allow for decimal fractions
+
+What is an undefined property? 
+-is a property that has not been assigned a value or does not exist in an object
+
+What is null value?
+-a value that represtents the intentional absense of any object value.
+
+What is the difference between null and undefined? 
+-null a value that represtents the intentional absense of any object value.
+-undifined is a property that has not been assigned a value or does not exist in an object.
+
+What are variable declaration and assignment in JavaScript?
+-variables in javaScript are declared using the var, let, const keywords
+
+What is isNaN?
+-It checks wheather a value is "Not-a-Number"
+
+What are the differences between undeclared and undefined variables?
+-An undeclared variable is a variable that has not been declared (created) using the var, let, or 
+const keywords. if you try to access an undeclkared variable in JS it will throw a Refrence error.
+-An undefined variable is a variable that has been declared, but no value has been assigned to it. 
+If you access an undefined variable, it will return the value undefined.
+
+What are identifiers in JavaScript and what are the rules to follow for identifiers?
+-In JS indentifiers are names used to uniquely identify variables, functions, objects, or 
+other things in the code.
+-They can only start with a letter, underscore or $ sign 
+-subsequent charecters can include letters, digits, underscores, or dollar signs.
+- identifiers are case sensitve mean myVariable and myvariable are different.
+
+What is string concatenation and how do you concatenate two strings in 
+JavaScript? 
+-string concatenation is forming a string within a string.
+- you can use the + operator the concat() method or template literals.
+
+What are the differences between string concatenation and interpolation?
+-String concatenation involves joining multiple strings together to create a new string. 
+-String interpolation, also known as template literals, allows you to embed expressions or 
+variables directly within a string
+
+Can you explain the concept of escaping characters in strings? 
+• Escaping characters allows you to include special characters within a string by using escape 
+sequences. 
+\n inserts a new line 
+\t inserts a tab space 
+\" inserts double quote 
+\' inserts single quote 
+\\ inserts backslas
+
+What are the truthy/falsy values in JavaScript?
+• Falsy Values:  
+-These are values that are considered "false" when evaluated in a boolean context. 
+-Common examples of falsy values include: 
+-The number 0. 
+-An empty string (""). 
+-null. 
+-Undefined. 
+-NaN (Not-a-Number). 
+-The boolean value false 
+-Truthy Values:  
+-These are values that are considered ”true" when evaluated in a boolean context. In 
+most programming languages, values that are not specifically considered "false" are 
+treated as truthy. Common examples of truthy values include: 
+-Numbers other than 0. 
+-Non-empty strings. 
+-Objects and arrays, which are considered true even if they are empty. 
+-Functions. 
+-The boolean value true
+
+What is nullish coalescing operator (??)?
+-The nullish coalescing operator (??) is used to provide a default value when a variable is null or 
+undefined
+
+What is the use/purpose of functions in JavaScript?
+-Functions in JS are reusable blocks of code, Function: is a block of code we can execute for a task
+It increases reusability of the code 
+-They allow grouping a set of instructions and execute them whenever needed.
+-Functions promote code reusablity 
+-They help break down complex tasxs into smaller, more managiable units.
+-They can be used multiple times through the code.
+
+What are if-else statements in JavaScript and what are they used for?
+• JavaScript if-else statements are used to test specific conditions and control the flow of the 
+program based on those conditions. 
+• They execute a block of code if a given condition is true, and another block of code if the 
+condition is false.
+
+What is the ternary operator in JavaScript? 
+-The ternary operator in JavaScript is a short-hand if-else expression that can be used instead of 
+simple if-else statements. 
+
+What is the switch statement in JavaScript?
+-The switch statement in JavaScript is used to select one of many code blocks to be executed 
+based on the value of an expression
+
+What is the break statement in JavaScript?
+-It is used with switch statments and loops and it's used for termination

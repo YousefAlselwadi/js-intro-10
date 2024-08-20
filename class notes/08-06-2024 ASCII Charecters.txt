@@ -1,0 +1,16 @@
+
+
+
+
+
+
+ASCII representation of charecters 
+
+32          SPACE
+48-57       [0-9]
+65-90       [A-Z]
+97-122      [a-z]
+The Rest    Special charecters
+
+REGEX
+/^\
