@@ -1,0 +1,7 @@
+
+
+
+
+Loops: mechanisim used to rn a block of code repeatedly 
+
+Iteration: Each time the loops run 
