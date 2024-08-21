@@ -2,9 +2,9 @@
 08-20-2024 JS Loops Intro
 
 
+Loops: mechanism used to run a block of code repeatedly 
 
-
-
+Iteration: Each time the loops run
 
 1. for loop 
 2. for...of loop 
