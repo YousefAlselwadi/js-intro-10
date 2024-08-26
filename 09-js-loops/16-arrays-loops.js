@@ -39,4 +39,12 @@ console.log(citiesWithLength6OrMore);
 
 
 
+// Find all the cities that has i or I in it -> [ 'Berlin', 'Chicago', 'Kyiv', 'Istanbul' ]
 
+const citiesWithI = []; 
+
+for(const city of cities) {
+if(city.toLowerCase().includes('i'))  citiesWithI.push(city);
+}
+
+console.log(citiesWithI);
