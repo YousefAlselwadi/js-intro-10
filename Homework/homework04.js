@@ -16,8 +16,8 @@ Expected Output:7
 98
 */
 
-for(let i = 1; i <= 100; i++) {
-    if(i % 7 === 0) console.log(i);
+for (let i = 1; i <= 100; i++) {
+    if (i % 7 === 0) console.log(i);
 }
 
 console.log('\n---------------TASK02-----------\n');
@@ -35,8 +35,8 @@ Expected Output:6
 48
 */
 
-for(let i = 1; i <= 50; i++) {
-    if(i % 2 === 0 && i % 3 === 0) console.log(i);
+for (let i = 1; i <= 50; i++) {
+    if (i % 2 === 0 && i % 3 === 0) console.log(i);
 }
 
 console.log('\n---------------TASK03-----------\n');
@@ -56,8 +56,8 @@ Expected Output:100
 50
 */
 
-for(let i = 100; i >= 50; i--) {
-    if(i % 5 === 0) console.log(i);
+for (let i = 100; i >= 50; i--) {
+    if (i % 5 === 0) console.log(i);
 }
 
 console.log('\n---------------TASK04-----------\n');
@@ -77,7 +77,7 @@ The square of 6 is =  36
 The square of 7 is =  49
 */
 
-for(let i = 0; i <= 7; i++) {
+for (let i = 0; i <= 7; i++) {
     console.log(`The square of ${i} is ${i ** 2}`);
 }
 
@@ -96,7 +96,7 @@ Expected Output:
 
 let sum = 0
 
-for(let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 10; i++) {
     sum += i
 }
 console.log(sum);
@@ -124,7 +124,7 @@ let factorial = ranNum;
 for (let i = ranNum - 1; i > 1; i--) {
     factorial *= (i);
 }
-if(factorial === 0) factorial = 1;
+if (factorial === 0) factorial = 1;
 console.log(factorial);
 
 console.log('\n---------------TASK07-----------\n');
@@ -148,6 +148,6 @@ let ranNum1;
 do {
     ranNum1 = getRandomNumber(1, 100);
     attempts++;
-}while(ranNum1 % 5 !== 0);
+} while (ranNum1 % 5 !== 0);
 
-    console.log(`The random number is ${ranNum1} and it took ${attempts} attempt/s to generate it`);
+console.log(`The random number is ${ranNum1} and it took ${attempts} attempt/s to generate it`);
