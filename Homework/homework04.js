@@ -141,5 +141,13 @@ Eventually, print the random number divisible by 5 with the number of attempts a
 Expected Output:The random number is {randomNumber} and it took {attempts} attempt/s to generate it.
 */
 
-let ranNum1 = getRandomNumber(1, 100);
 
+let attempts = 0;
+let ranNum1;
+
+do {
+    ranNum1 = getRandomNumber(1, 100);
+    attempts++;
+}while(ranNum1 % 5 !== 0);
+
+    console.log(`The random number is ${ranNum1} and it took ${attempts} attempt/s to generate it`);
