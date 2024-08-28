@@ -446,20 +446,20 @@ reverseStringWords("    ") 		-> ""
 */
 
 function reverseStringWords(str) {
-    let str1 = str.slice(" ");
+    let words = str.trim().split(/\s+/);
 
-    for(let i = 0; i < str1,length; i++) {
-        str1[i] = str1[i].split("");
+    for(let i = 0; i < words.length; i++) {
+        words[i] = words[i].split('').reverse().join('');
     }
 
-    return str1.split(" ");
+    return words.join(' ');
 }
 
-console.log("Hello World");
-console.log("I like JavaScript");
-console.log("Hello");
-console.log("");
-console.log("    ");
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("I like JavaScript"));
+console.log(reverseStringWords("Hello"));
+console.log(reverseStringWords(""));
+console.log(reverseStringWords("    "));
 
 console.log('\n---------------TASK18-----------\n');
 /*
@@ -571,3 +571,4 @@ console.log(fizzBuzz(13, 18));
 console.log(fizzBuzz(12, 5));
 console.log(fizzBuzz(5, 5));
 console.log(fizzBuzz(9, 6));
+
