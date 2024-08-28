@@ -564,7 +564,7 @@ function fizzBuzz(num1, num2) {
         else arr.push(i);
     };
 
-    return arr.join(" | ");
+    return arr.join(' | ');
 };
 
 console.log(fizzBuzz(13, 18));
