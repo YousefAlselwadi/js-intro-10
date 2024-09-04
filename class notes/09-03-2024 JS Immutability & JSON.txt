@@ -1,0 +1,51 @@
+
+
+
+09-03-2024 JS Immutability & JSON
+
+Multiple: changing 
+Tmmutable: not changing 
+
+arrsy and objects are mutable data types, and some of theur methods can change their values
+const arr = [ 1, 2, 3 ];
+
+arr.push(4): // [1, 2, 3, 4]
+
+
+
+
+
+const person = {
+    fname: 'John',
+    lname: 'Doe'
+};
+
+person.age = 25; // { fname: 'John', lname: 'Doe', age: 25 }
+
+const numbers = [ 10, 20, 30 ];
+
+multible array methods: reverce(), pop(), push(), shift(), unshift(), splice(), sort()
+
+immutible array methods: indexOf(), lastIndexOf(), includes(), isArray(), slice(), concat(), 
+map(), filter(), reduce(), forEach(), find(), findLast(), findIndex(), findLastIndex(), some(),
+every(), at(), flat(), toString(), join()
+
+PERIMITIVES:
+string, number, boolean, null, undefined, bigInt, symbol
+
+Note: All the PERIMITIVES are immutable by their nature.
+
+let name = 'John';
+
+name = 'James';
+
+console.log(name); // 'James
+
+DATA TYPES SUPPORTED BY JSON
+Strings: 'Hello, World'
+Numbers: 42 or 3.14
+Booleans: true or false
+Arrays: ['Apple', 'Mango', 'Bannanna' ];
+Objects: ('Key': 'Value', 'age': 25)
+
+Not supported: undifned, sumbol, functions, refrence types except the arrays and objects.
