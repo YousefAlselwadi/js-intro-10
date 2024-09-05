@@ -327,11 +327,20 @@ findClosestTo10([10, -13, 8, 12, 15, -20]) 	-> 8
 findClosestTo10([0, -1, -2]) 		-> 0
 */
 
-function findClosestTo10(arrNum) {
-    if (arrNum.filter((number) => number !== 10)) {
-        return Math.floor(arrNum);
-    }
+const findClosestTo10 = arr => {
+    let closestTo10 = Number.MAX_VALUE;
+    let closestDiff = Number.MAX_VALUE;
 
+    for(let ele of arr){
+        if(ele === 10) continue;
+        let currDifference = Math.abs(ele - 10)
+
+        if(currDifference < closestDiff || (currDifference === closestDiff) && ele < closestTo10){
+            closestTo10 = ele;
+            closestDiff = currDifference;
+        }
+    }
+    return closestTo10
 }
 
 console.log(findClosestTo10([10, -13, 5, 70, 15, 57]));
@@ -407,9 +416,22 @@ isPasswordValid("Chicago123$") 		-> true
 isPasswordValid("Test1234#") 		-> true
 */
 
-function isPasswordValid(password) {
-    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-+.]).{8,16}$/;
-    return regex.test(password);
+const isPasswordValid = pass => {
+    if(pass.length < 8 || pass.length > 16 || pass.includes(' ')) return false;
+    
+    let hasUppercase = false;
+    let hasLowercase = false;
+    let hasDigit = false;
+    let hasSpecial = false;
+
+    for(let char of pass) {
+        if(char >= 'a' && char <= 'z') hasLowercase = true;
+        else if(char >= 'A' && char <= 'Z') hasUppercase = true;
+        else if(char >= '0' && char <= '9') hasDigit = true;
+        else hasSpecial = true;
+    }
+
+    return hasUppercase && hasLowercase && hasDigit && hasSpecial
 }
 
 console.log(isPasswordValid(""));
