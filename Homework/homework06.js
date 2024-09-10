@@ -201,3 +201,44 @@ const no3and5 = (arr) => {
 console.log(no3and5([7, 4, 11, 23, 17]));
 console.log(no3and5([3, 4, 5, 6]));
 console.log(no3and5([10, 11, 12, 13, 14, 15]));
+
+console.log('\n---------------TASK08-----------\n');
+/*
+Requirement:
+Write a function named countPrimes() which takes an array of integer 
+numbers as argument and will return the number of the prime numbers in the 
+given array.
+NOTE: Prime number is a number that can be divided only by 1 and itself .
+NOTE: Negative numbers cannot be prime .
+Examples: 2,3,5,7,11,13,17,19,23,29,31,37 etc. 
+NOTE: Smallest prime number is 2.
+Examples:
+countPrimes([-10, -3, 0, 1])  -> 0
+countPrimes([7, 4, 11, 23, 17])  -> 4
+countPrimes([41, 53, 19, 47, 67])  -> 5
+*/
+
+function isPrime(n) {
+    if (n <= 1) return false;
+    if (n === 2) return true;
+    if (n % 2 === 0) return false;
+
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+function countPrimes(arr) {
+    let primeCount = 0;
+
+    for (let num of arr) {
+        if (isPrime(num)) primeCount++;
+    }
+
+    return primeCount;
+}
+
+console.log(countPrimes([-10, -3, 0, 1]));
+console.log(countPrimes([7, 4, 11, 23, 17]));
+console.log(countPrimes([41, 53, 19, 47, 67]));
