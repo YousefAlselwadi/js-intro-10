@@ -242,3 +242,135 @@ function countPrimes(arr) {
 console.log(countPrimes([-10, -3, 0, 1]));
 console.log(countPrimes([7, 4, 11, 23, 17]));
 console.log(countPrimes([41, 53, 19, 47, 67]));
+
+console.log('\n---------------TASK09-----------\n');
+
+/*
+Requirement:
+Write a function named removeDuplicates() which takes an array argument 
+and returns a new array with all the duplicates removed.
+Examples:
+removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]) 		-> [10, 20, 35, 60, 70]
+removeDuplicates([1, 2, 5, 2, 3]) 			-> [1, 2, 5, 3]
+removeDuplicates([0, -1, -2, -2, -1]) 			-> [0, -1, -2]
+removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]) 	-> ["abc", "xyz", "123", "ab", "ABC"]
+removeDuplicates(["1", "2", "3", "2", "3"]) 		-> ["1", "2", "3"]
+*/
+
+const removeDuplicates = arr => {
+    return[...new Set(arr)];
+}
+
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
+console.log(removeDuplicates([1, 2, 5, 2, 3]));
+console.log(removeDuplicates([0, -1, -2, -2, -1]));
+console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+console.log(removeDuplicates(["1", "2", "3", "2", "3"]));
+
+console.log('\n---------------TASK10-----------\n');
+
+/*
+Requirement: 
+Write a method named isDateFormatValid() that takes a string as an argument and returns true if the given date is valid or returns false otherwise.
+Expected Format: nn/nn/nnnn
+So, it must be presented as <2digits>/<2digits>/<4digits>
+
+Examples:
+isDateFormatValid("") 			-> false
+isDateFormatValid("15/30/2020") 		-> false
+isDateFormatValid("10-30-2020 ") 		-> false
+isDateFormatValid("10.30.2020") 		-> false
+isDateFormatValid("5/30/2020") 		-> false
+isDateFormatValid("05/30/2020 ") 		-> true
+isDateFormatValid("10/2/2020") 		-> false
+isDateFormatValid("10/02/2020 ") 		-> true
+*/
+
+const isDateFormatValid = str => {
+
+}
+
+console.log('\n---------------TASK11-----------\n');
+
+/*
+Requirement: 
+Write a method named secondMax() takes an array argument 
+and returns the second max number from the array.
+
+NOTE: Assume that you will not be given empty array 
+and if the array has only 1 element, it will be returned as second max number.
+
+NOTE: Be careful when there is multiple max numbers.
+
+Examples:
+secondMax([7, 4, 4, 4, 23, 23, 23]) 	-> 7
+secondMax([3, 4, 5, 6]) 		-> 5
+secondMax([10]) 		
+*/
+
+const secondMax = arr => {
+    if (arr.length === 1) return arr[0];
+
+    const removeDup = [...new Set(arr)]
+
+    removeDup.sort((a, b) => b - a);
+
+    return removeDup[1];
+}
+
+console.log(secondMax([7, 4, 4, 4, 23, 23, 23]));
+console.log(secondMax([3, 4, 5, 6]));
+console.log(secondMax([10]));
+
+console.log('\n---------------TASK12-----------\n');
+/*
+Requirement: 
+Write a method named secondMin() takes an array argument and returns the second min number from the array.
+
+NOTE: Assume that you will not be given empty array and if the array has only 1 element, it will be returned as second min number.
+
+NOTE: Be careful when there is multiple min numbers.
+
+Examples:
+secondMax([7, 4, 4, 4, 23, 23, 23]) 	-> 7
+secondMax([3, 4, 5, 6]) 		-> 4
+secondMax([10]) 		
+*/
+
+const secondMin = arr => {
+    if (arr.length === 1) return arr[0];
+
+    const removeDup = [...new Set(arr)];
+
+    removeDup.sort((a, b) => a - b);
+
+    return removeDup[1];
+}
+
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23]));
+console.log(secondMin([3, 4, 5, 6]));
+console.log(secondMin([10]));
+
+console.log('\n---------------TASK13-----------\n');
+
+/*
+Requirement: 
+Write a method named mostRepeated() takes an array argument and returns the most counted element from the array.
+
+NOTE: Assume that you will not be given empty array and the count of one element will always be more than the others.
+
+Examples:
+mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]) 			-> 4
+mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]) 	-> "pen"
+mostRepeated([10]) 					-> 10
+mostRepeated(["TechGlobal"]) 
+*/
+
+const mostRepeated = arr => {
+    return arr.sort((a, b) => arr.filter(v => v === a).length - arr.filter(v => v === b).length).pop();
+  }
+  
+console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
+console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));
+console.log(mostRepeated([10]));
+console.log(mostRepeated(["TechGlobal"]));

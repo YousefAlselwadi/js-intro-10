@@ -1,0 +1,28 @@
+
+
+
+JS Prototypes or Classes are used to improve the reusibility of the object 
+
+Prototype or class - templae from which you can create many object 
+Objects or instances are created from prototypes or classes using constructor together
+with new keyword
+
+
+Inheritance: it is building a parent-child relationship
+
+How do we achieve Inheritince?
+we can extends keyword
+what is method overridng?
+when child class inheriting parent class but changes the method body.
+
+what is method overloading? 
+when you are able to use the same method with differnt arguments 
+
+
+Method overridng vs method overloading?
+overriding happens in the case of inheritince and when child class re-implements a new body for a parent
+overloading is just using same method name with different arguments
+
+
+what is super()
+super() is used to inherit parent constructop into child constructor
