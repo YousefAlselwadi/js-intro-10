@@ -69,8 +69,8 @@ hasVowel("ABC")  -> true
 */
 
 const hasVowel = (str) => {
-    for(let char of str) {
-        if('AEOUIaeoui'.includes(char)) {
+    for (let char of str) {
+        if ('AEOUIaeoui'.includes(char)) {
             return true;
         }
     }
@@ -81,7 +81,7 @@ console.log(hasVowel(""));
 console.log(hasVowel("Javascript"));
 console.log(hasVowel("Tech Global"));
 console.log(hasVowel("1234"));
-console.log(hasVowel("ABC")); 
+console.log(hasVowel("ABC"));
 
 console.log('\n---------------TASK04-----------\n');
 /*
@@ -108,7 +108,7 @@ const checkAge = num => {
     if (num > currentYear) {
         return 'AGE IS NOT VALID';
     }
-    else if (age > 120){
+    else if (age > 120) {
         return 'AGE IS NOT VALID';
     }
     else if (age < 16) {
@@ -139,7 +139,7 @@ averageOfEdges(10, 13, 20)  -> 15
 const averageOfEdges = (num1, num2, num3) => {
     const max = Math.max(num1, num2, num3);
     const min = Math.min(num1, num2, num3);
-    return((max + min) / 2)
+    return ((max + min) / 2)
 }
 console.log(averageOfEdges(0, 0, 0));
 console.log(averageOfEdges(0, 0, 6));
@@ -185,18 +185,18 @@ no3and5([10, 11, 12, 13, 14, 15])  -> [99, 11, 100, 13, 14, 101]
 */
 
 const no3and5 = (arr) => {
-     return arr.map((num) => {
+    return arr.map((num) => {
         if (num % 3 === 0 && num % 5 === 0) {
             return 101;
         }
-        else if (num % 5 === 0){
+        else if (num % 5 === 0) {
             return 99;
         }
-        else if (num % 3 === 0){
+        else if (num % 3 === 0) {
             return 100;
         }
         else return num;
-     })
+    })
 }
 console.log(no3and5([7, 4, 11, 23, 17]));
 console.log(no3and5([3, 4, 5, 6]));
@@ -218,25 +218,23 @@ countPrimes([7, 4, 11, 23, 17])  -> 4
 countPrimes([41, 53, 19, 47, 67])  -> 5
 */
 
-function isPrime(n) {
-    if (n <= 1) return false;
-    if (n === 2) return true;
-    if (n % 2 === 0) return false;
+function countPrimes(numbers) {
+    let count = 0;
 
-    for (let i = 3; i <= Math.sqrt(n); i += 2) {
-        if (n % i === 0) return false;
-    }
-    return true;
-}
+    const isPrime = (num) => {
+        if (num < 2) return false;
 
-function countPrimes(arr) {
-    let primeCount = 0;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    };
 
-    for (let num of arr) {
-        if (isPrime(num)) primeCount++;
+    for (let num of numbers) {
+        if (isPrime(num)) count++;
     }
 
-    return primeCount;
+    return count;
 }
 
 console.log(countPrimes([-10, -3, 0, 1]));
@@ -258,7 +256,7 @@ removeDuplicates(["1", "2", "3", "2", "3"]) 		-> ["1", "2", "3"]
 */
 
 const removeDuplicates = arr => {
-    return[...new Set(arr)];
+    return [...new Set(arr)];
 }
 
 console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
@@ -287,8 +285,30 @@ isDateFormatValid("10/02/2020 ") 		-> true
 */
 
 const isDateFormatValid = str => {
+    const dateParts = str.split('/');
+    const [monthStr, dayStr, yearStr] = dateParts;
 
+    if (monthStr.length !== 2 || dayStr.length !== 2 || yearStr.length !== 4) {
+        return false;
+    }
+
+    const month = Number(dateParts[0]);
+    const day = Number(dateParts[1]);
+    const year = Number(dateParts[2]);
+
+    const date = new Date(year, month - 1, day);
+
+    return date.getMonth() === month - 1 && date.getFullYear() === year && date.getDate() === day;
 }
+
+console.log(isDateFormatValid(""));
+console.log(isDateFormatValid("15/30/2020"));
+console.log(isDateFormatValid("10-30-2020"));
+console.log(isDateFormatValid("10.30.2020"));
+console.log(isDateFormatValid("5/30/2020"));
+console.log(isDateFormatValid("05/30/2020"));
+console.log(isDateFormatValid("10/2/2020"));
+console.log(isDateFormatValid("10/02/2020"));
 
 console.log('\n---------------TASK11-----------\n');
 
@@ -368,8 +388,8 @@ mostRepeated(["TechGlobal"])
 
 const mostRepeated = arr => {
     return arr.sort((a, b) => arr.filter(v => v === a).length - arr.filter(v => v === b).length).pop();
-  }
-  
+}
+
 console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
 console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));
 console.log(mostRepeated([10]));
