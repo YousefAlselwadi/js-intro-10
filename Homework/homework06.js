@@ -288,9 +288,8 @@ const isDateFormatValid = str => {
     const dateParts = str.split('/');
     const [monthStr, dayStr, yearStr] = dateParts;
 
-    if (monthStr.length !== 2 || dayStr.length !== 2 || yearStr.length !== 4) {
-        return false;
-    }
+    if (monthStr.length !== 2 || dayStr.length !== 2 || yearStr.length !== 4) return false;
+
 
     const month = Number(dateParts[0]);
     const day = Number(dateParts[1]);
@@ -387,7 +386,20 @@ mostRepeated(["TechGlobal"])
 */
 
 const mostRepeated = arr => {
-    return arr.sort((a, b) => arr.filter(v => v === a).length - arr.filter(v => v === b).length).pop();
+    let count = {};
+    let mostRepeated;
+    let mostRepeatedCount = 0;
+
+    for (let ele of arr) {
+        if (count[ele]) count[ele]++
+        else count[ele] = 1
+
+        if (count[ele] > mostRepeatedCount) {
+            mostRepeatedCount = count[ele]
+            mostRepeated = ele;
+        }
+        return mostRepeated;
+    }
 }
 
 console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));

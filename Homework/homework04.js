@@ -121,10 +121,10 @@ let ranNum = getRandomNumber(1, 10)
 let factorial = ranNum;
 
 
-for (let i = ranNum - 1; i > 1; i--) {
-    factorial *= (i);
+for(let i = 2; i <= random; i++){
+    factorial *= i
 }
-if (factorial === 0) factorial = 1;
+
 console.log(factorial);
 
 console.log('\n---------------TASK07-----------\n');
@@ -190,18 +190,21 @@ Expected Result:
 [ 'Scooby Doo', 'Snoopy', 'Blue', 'Pluto', 'Dino', 'Sparky' ]
 true
 */
-
 const cartoonDogs = [ 'Scooby Doo', 'Snoopy', 'Blue', 'Pluto', 'Dino', 'Sparky' ];
-
 console.log(cartoonDogs);
+console.log(cartoonDogs.includes('Pluto'));
 
-for(const Dog of cartoonDogs) {
-    if(Dog.includes('Pluto')) {
-        console.log(false);
-    } 
-    else console.log(true);
-    break;
-}
+// const cartoonDogs = [ 'Scooby Doo', 'Snoopy', 'Blue', 'Pluto', 'Dino', 'Sparky' ];
+
+// console.log(cartoonDogs);
+
+// for(const Dog of cartoonDogs) {
+//     if(Dog.includes('Pluto')) {
+//         console.log(false);
+//     } 
+//     else console.log(true);
+//     break;
+// }
 
 
 console.log('\n---------------TASK10-----------\n');
@@ -224,14 +227,19 @@ false
 const cartoonCats = [ 'Garfield', 'Tom', 'Sylvester', 'Azrael' ];
 
 console.log(cartoonCats.sort());
+console.log(cartoonCats.includes('Garfield') && cartoonCats.includes('Felix'));
 
-for (const cat of cartoonCats) {
-    if (cat === 'Garfield' && cat === 'Felix') {
-       console.log(true);
-    }
-    else console.log(false);
-    break;
-}
+// const cartoonCats = [ 'Garfield', 'Tom', 'Sylvester', 'Azrael' ];
+
+// console.log(cartoonCats.sort());
+
+// for (const cat of cartoonCats) {
+//     if (cat === 'Garfield' && cat === 'Felix') {
+//        console.log(true);
+//     }
+//     else console.log(false);
+//     break;
+// }
 
 console.log('\n---------------TASK11-----------\n');
 /*
