@@ -1,0 +1,98 @@
+
+
+
+09-21-2024 JS Modules
+
+1. CommonJS Modules
+module.exports and require()
+
+2. ES6 Modules
+export and import
+
+
+HOW TO RN JS CODE?
+-NodeJS
+-Browser
+-Extensions (You'll never use this in the work environment)
+
+
+static methods and properties can be accessed with the className while non-static can be accessed within an object of the class
+class A {
+    static propertyA = 'Hi';
+    propertyB = 'Hello';
+
+    static funcA() {
+        console.log('I am static');
+    }
+
+    funcB() {
+        console.log('I am not static');
+    }
+}
+
+// Accessing static properties and methods
+Apple.propertyA; // 'Hi'
+Apple.funcA(); // I am static
+
+const a1 = new Apple();
+
+a1.funcB(); // I am not static
+a1.propertyB; // Hello
+
+
+if the mehtod executes the same tasl for every single object
+of the class, it makes sense to use static methods
+
+class Batch10Student {
+    constructor(fullname, age) p{
+        this.fullname = fullname;
+    }
+    static getProgramName() {
+        return 'SDET'
+    }
+
+    getFullName() {
+        return this.fullname;
+    }
+
+    getAge() {
+        return this.age;
+    }
+}
+
+const bermet = new batch10Student('Bermet S', 20);
+const alina = new batch10Student('Alina', 21);
+
+bermet.getFullName();
+
+Batch10Student.getProgramName();
+
+class AppleStore {
+    constructor(id, city, state, zip) {
+
+    }
+
+   static getIphone16ProMaxPrice() {
+
+    }
+}
+
+WEB APPLICATION: Any app you visit on browsers
+Mobile Applications: Any app you download from appstore or googleplay 
+Hybrid Applications: You can us eon wb and also install on your mobile devices
+
+Desktop Applications: Robot frameWork (Python)
+
+Web application: is consist of many web pages
+Each web page is created using html
+
+Each element is represtented by an html tag
+
+Openenning tag: <button>
+closing tag: </button>
+opening and closing tag / self closing tag: <img/>
+
+tags may have many properties/attributes. All the properties are added as key-values pairs
+in the opening tags
+
+<tagname>VISIBLE TEXT</tagName>
