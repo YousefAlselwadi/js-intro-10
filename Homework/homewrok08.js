@@ -1,4 +1,4 @@
-//Task 01
+//Task01
 /*
 Requirement:
 Write a function named hasLowerCase() which takes a string argument and 
@@ -12,8 +12,8 @@ hasLowerCase("   a   ")  -> true
 */
 
 const hasLowerCase = str => {
-    for(let char of str) {
-        if(char >= 'a' && char <= 'z') return true;
+    for (let char of str) {
+        if (char >= 'a' && char <= 'z') return true;
     }
     return false;
 }
@@ -24,7 +24,7 @@ console.log(hasLowerCase("hello"));
 console.log(hasLowerCase("125$"));
 console.log(hasLowerCase("   a   "));
 
-// Task 02
+// Task02
 /*
 Requirement:
 Write a function named noZero() which takes an array of numbers as argument 
@@ -40,12 +40,12 @@ noZero([10, 100, 0]) -> [10, 100]
 const noZero = arr => arr.filter(num => num !== 0);
 
 console.log(noZero([1]));
-console.log(noZero( [1, 1, 10] ));
+console.log(noZero([1, 1, 10]));
 console.log(noZero([0, 1, 10]));
 console.log(noZero([0, 0, 0]));
 console.log(noZero([10, 100, 0]));
 
-// Task 03
+// Task03
 /*
 Requirement:
 Write a function named numberAndSquare() which takes an array of numbers 
@@ -66,7 +66,7 @@ console.log(numberAndSquare([1, 4]));
 console.log(numberAndSquare([0, 0, 0]));
 console.log(numberAndSquare([0, 1, -10]));
 
-// Task 04
+// Task04
 /*
 Requirement:
 Write a function named containsValue() which takes a string array and a 
@@ -90,7 +90,7 @@ console.log(containsValue(["abc", "def", "123"], "Abc"));
 console.log(containsValue(["abc", "def", "123", "Javascript", "Hello"], "123"));
 
 
-// Task 05
+// Task05
 /*
 Requirement:
 Write a function named reverseSentence() which takes a string as argument 
@@ -109,3 +109,113 @@ const reverseSentence = str => {
 console.log(reverseSentence("Hello"));
 console.log(reverseSentence("Javascript is fun"));
 console.log(reverseSentence("This is a sentence"));
+
+//Task06
+/*
+Requirement:
+Write a function named removeStringSpecialsDigits() which takes a string 
+as argument and return a string without the special characters or digits.
+Examples:
+removeStringSpecialsDigits("123Javascript #$%is fun")  -> "Javascript is fun" 
+removeStringSpecialsDigits("Cypress")  -> "Cypress"
+removeStringSpecialsDigits("Automation123#$%")  -> "Automation"
+*/
+
+function removeStringSpecialsDigits(str) {
+    let result = '';
+
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+
+        if (isNaN(char) && (char >= 'a' && char <= 'z' || char >= 'A' && char <= 'Z' || char === ' ')) {
+            result += char;
+        }
+    }
+
+    return result;
+}
+
+console.log(removeStringSpecialsDigits("123Javascript #$%is fun"))
+console.log(removeStringSpecialsDigits("Cypress"))
+console.log(removeStringSpecialsDigits("Automation123#$%"))
+
+// Task07
+/*
+Requirement:
+Write a function named removeArraySpecialsDigits() which takes a string 
+array as argument and return back without the special characters or digits.
+Examples:
+removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"])  -> 
+["Javascript", "is", "fun"]
+removeArraySpecialsDigits(["Cypress", "123$%", "###"])  -> ["Cypress", "", 
+""]
+removeArraySpecialsDigits(["Automation", "123#$%tool"])  -> ["Automation", 
+"tool"]
+*/
+
+function removeArraySpecialsDigits(arr) {
+    const removeSpecialsAndDigits = (str) => {
+        let result = '';
+        for (let i = 0; i < str.length; i++) {
+            const char = str[i];
+            if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ') {
+                result += char;
+            }
+        }
+        return result;
+    };
+    return arr.map(removeSpecialsAndDigits);
+}
+
+console.log(removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]));
+console.log(removeArraySpecialsDigits(["Cypress", "123$%", "###"]));
+console.log(removeArraySpecialsDigits(["Automation", "123#$%tool"]));
+
+// Task08
+/*
+Requirement:
+Write a function named getCommons() which takes two string arrays as 
+arguments and returns all the common words.
+Examples:
+getCommons( ["Javascript", "is", "fun"], ["abc", "xyz", "123"] ) 
+-> []
+getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] ) -> 
+["Javascript"]
+getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] )  -> ["C#"]
+*/
+
+const getCommons = (arr1, arr2) => {
+    return [...new Set(arr1.filter((word) => arr2.includes(word)))];
+}
+
+console.log(getCommons(["Javascript", "is", "fun"], ["abc", "xyz", "123"]));
+console.log(getCommons(["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]));
+console.log(getCommons(["Javascript", "C#", "C#"], ["Python", "C#", "C++"]));
+
+// Task09
+/*
+Requirement:
+Write a function named noXInVariables() which takes an array as argument 
+and return an array that all the x or X removed from the elements. 
+NOTE: If the element is existing of x or X letters only, then completely remove 
+the element.
+Examples:
+noXInVariables(["abc", 123, "#$%"])  -> ["abc", 123, "#$%"]
+noXInVariables(["xyz", 123, "#$%"])  -> ["yz", 123, "#$%"]
+noXInVariables(["x", 123, "#$%"])  -> [123, "#$%"]
+noXInVariables(["xyXyxy", "Xx", "ABC"])  -> ["yyy", "ABC"]
+*/
+
+const noXInVariables = arr => {
+    return arr.map(item => {
+        if (typeof item === 'string') {
+            let newItem = item.split('x').join('').split('X').join('');
+            return newItem === '' ? null : newItem;
+        }
+        return item;
+    })};
+
+console.log(noXInVariables(["abc", 123, "#$%"]));
+console.log(noXInVariables(["xyz", 123, "#$%"]));
+console.log(noXInVariables(["x", 123, "#$%"]));
+console.log(noXInVariables(["xyXyxy", "Xx", "ABC"]));
