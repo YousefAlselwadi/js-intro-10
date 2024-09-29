@@ -77,21 +77,20 @@ findSumNumbers("525") -> 525
 findSumNumbers("3 for 10 dollars") -> 13
 */
 const findSumNumbers = str => {
-    let sum = 0;
-    let num = 0;
+    let total = 0;
+    let number = '';
 
-    for (let i = 0; i < str.length; i++) {
-        const char = str[i];
+    for (char of str) {
         if (char >= '0' && char <= '9') {
-            num = num * 10 + (char - '0');
-        } else {
-            sum += num;
-            num = 0;
+            number += char;
+        }
+        else {
+            total += Number(number)
+            number = ''
         }
     }
-    sum += num;
-
-    return sum;
+    if (number) total += Number(number)
+    return total
 }
 
 console.log(findSumNumbers("abc$"));
@@ -114,12 +113,20 @@ findBiggestNumber("3 for 10 dollars")  -> 10
 */
 
 const findBiggestNumber = str => {
-let maxNum = 0, currentNum = 0;
-    for (let char of str) {
-        if (char >= '0' && char <= '9') currentNum = currentNum * 10 + (+char);
-        else maxNum = Math.max(maxNum, currentNum), currentNum = 0;
+    let allNums = [];
+    let number = '';
+
+    for (char of str) {
+        if (char >= '0' && char <= '9') {
+            number += char;
+        }
+        else {
+            allNums.push(Number(number))
+            number = ''
+        }
     }
-    return Math.max(maxNum, currentNum);
+    if (number) allNums.push(Number(number))
+    return allNums.sort((a, b) => a - b)[allNums.length - 1]
 }
 console.log(findBiggestNumber("abc$"));
 console.log(findBiggestNumber("a1b4c  6#"));
@@ -142,9 +149,29 @@ countOccurrencesOfCharacters("aaAAa")  -> "2a2A1a”
 countOccurrencesOfCharacters("www" ) -> "3w"
 */
 
+const countOccurrencesOfCharacters = (str) => {
+    if (str === "") return "";
+    let result = ''
+    let currentLetter = str[0];
+    let count = 1;
 
+    for (let i = 1; i < str.length; i++) {
+        if (currentLetter === str[i]) count++;
+        else {
+            result += count + currentLetter
+            currentLetter = str[i];
+            count = 1
+        }
+    }
+    result += count + currentLetter
+    return result
+}
 
-
+console.log(countOccurrencesOfCharacters(""));
+console.log(countOccurrencesOfCharacters("abc"));
+console.log(countOccurrencesOfCharacters("abbcca"));
+console.log(countOccurrencesOfCharacters("aaAAa"));
+console.log(countOccurrencesOfCharacters("www"));
 
 
 // Task06
