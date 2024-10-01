@@ -189,6 +189,25 @@ fibonacciSeries1(1)  -> [0]
 fibonacciSeries1(2)  -> [0, 1]
 */
 
+const fibonacciSeries1 = num => {
+    if (num === 1) return [0];
+    if (num === 2) return [0, 2];
+
+    let result = [0, 1];
+
+    for (let i = 2; i < num; i++) {
+        result.push(result[i - 1] + result[i - 2]);
+    }
+
+    return result;
+}
+console.log(fibonacciSeries1(3));
+console.log(fibonacciSeries1(5));
+console.log(fibonacciSeries1(7));
+console.log(fibonacciSeries1(8));
+console.log(fibonacciSeries1(1));
+console.log(fibonacciSeries1(2));
+
 // Task07
 /*
 Requirement:
@@ -202,6 +221,18 @@ fibonacciSeries2(8)  -> 13
 fibonacciSeries2(9)  -> 21
 fibonacciSeries2(1)  -> 0
 */
+
+const fibonacciSeries2 = (num) => {
+    if (num === 1) return 0;
+    if (num === 2 || num === 3) return 1;
+    else return fibonacciSeries2(num - 1) + fibonacciSeries2(num - 2)
+}
+
+console.log(fibonacciSeries2(2));
+console.log(fibonacciSeries2(4));
+console.log(fibonacciSeries2(8));
+console.log(fibonacciSeries2(9));
+console.log(fibonacciSeries2(1));
 
 // Task08
 /*
@@ -220,6 +251,14 @@ findUniques([8, 9], [9, 8, 9])  -> []
 findUniques([-1, -2], [1, 2])  -> [-1, -2, 1, 2]
 */
 
+const findUniques = (arr1, arr2) => [...(new Set(arr1.concat(arr2).filter(i => !(arr1.includes(i) && arr2.includes(i)))))]
+
+console.log(findUniques([], []));
+console.log(findUniques([], [1, 2, 3, 2]));
+console.log(findUniques([1, 2, 3, 4], [3, 4, 5, 5]));
+console.log(findUniques([8, 9], [9, 8, 9]));
+console.log(findUniques([-1, -2], [1, 2]));
+
 // Task09
 /*
 Requirement:
@@ -237,3 +276,17 @@ isPowerOf3(100)  -> false
 isPowerOf3(81)  -> true
 isPowerOf3(9)  -> true
 */
+
+const isPowerOf3 = (num) => {
+    for (let i = num; i > 0; i /= 3) {
+        if (i === 1) return true
+    }
+    return false
+}
+console.log(isPowerOf3(1));
+console.log(isPowerOf3(2));
+console.log(isPowerOf3(3));
+console.log(isPowerOf3(27));
+console.log(isPowerOf3(100));
+console.log(isPowerOf3(81));
+console.log(isPowerOf3(9));
