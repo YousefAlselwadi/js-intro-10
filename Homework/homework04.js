@@ -526,7 +526,7 @@ function getMultipleOf5(num1, num2) {
     let greaterNumber1 = Math.max(num1, num2);
     let smallerNumber1 = Math.min(num1, num2);
 
-    for(i = greaterNumber1; i >= smallerNumber1; i--) {
+    for(let i = greaterNumber1; i >= smallerNumber1; i--) {
         if(i % 5 === 0) divisibleBy5.push(i);
     };
 

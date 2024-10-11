@@ -276,7 +276,7 @@ console.log(swap4(""));
 console.log(swap4("   "));
 console.log(swap4("Apple"));
 
-console.log('\n----------TASK09----------\n');
+console.log('\n----------TASK10----------\n');
 
 /*
 Requirement: 

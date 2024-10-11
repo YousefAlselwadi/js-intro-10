@@ -151,11 +151,11 @@ console.log('\n---------------TASK06-----------\n');
 
 /*
 Requirement:
-Write a function named noA() which takes an array of strings as argument and 
+Write a function named () which takes an array of strings as argument and 
 will return a new array with all elements starting with "A" or "a" replaced with 
 "###".
 Examples:
-noA(["javascript", "hello", "123", "xyz"])  ->  ["javascript", "hello", "123", "xyz"]
+(["javascript", "hello", "123", "xyz"])  ->  ["javascript", "hello", "123", "xyz"]
 noA(["apple", "123", "ABC", "javascript"])  ->  ["###", "123", "###", "javascript"]
 noA(["apple", "abc", "ABC", "Alex", "A"])  -> ["###", "###", "###", "###", 
 "###"]

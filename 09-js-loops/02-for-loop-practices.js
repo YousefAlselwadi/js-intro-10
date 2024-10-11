@@ -1,4 +1,4 @@
-const { getRandomNumber } = require('../utils/MathHelper.js');
+const { getRandomNumber } = require('..//MathHelper.js');
 
 // Output the numbers from 1 to 10 (both inclusive) -> 1 2 3 4 5 ….
 
