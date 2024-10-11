@@ -888,7 +888,7 @@ arrFactorial([5 , 0, 6])
 arrFactorial([])
 */
 
-const factorial = (n) =>{
+const isfactorial = (n) =>{
     if (n === 0) return 1;
     return n === 1 ? 1 : n * factorial(n - 1);
 }
