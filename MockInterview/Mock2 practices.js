@@ -916,8 +916,13 @@ sumOfDigits("$125.0")       -> 8
 sumOfDigits("")         -> 0
 */
 
-const sumOfDigits = str => [...str].reduce((sum, char) => sum + (+char || 0), 0);
-
+const sumOfDigits = str => {
+    let sum = 0;
+    for(const num of str) {
+        if(num >= '0' && num <= '9') sum += Number(num);
+    }
+    return sum;
+}
 console.log(sumOfDigits("Javascript"));     
 console.log(sumOfDigits("John's age is 29")); 
 console.log(sumOfDigits("$125.0"));         
