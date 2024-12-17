@@ -17,6 +17,7 @@ const toInitials = str => {
     const words = str.split(' ')
     const initials = words.map((word) => word.charAt(0).toUpperCase() + '.')
     return initials.join(' ')
+
 }
 console.log(toInitials( "Joe Doe"));
 console.log(toInitials( "Alex Reyes"));
@@ -112,6 +113,7 @@ reverse("Apples 456")  -> "654 selppA"
 */
 
 const reverse = str => str.split('').reverse().join('')
+
 
 console.log(reverse("Hello World"));
 console.log(reverse("TechGlobal"));
